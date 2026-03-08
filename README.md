@@ -1,41 +1,68 @@
-# Task Manager API
+Task Manager is a full-stack application built as part of the Backend/Frontend Developer Intern assignment for Primetrade.
 
-A Spring Boot REST API for managing tasks with user accounts.
+The project demonstrates:
+	•	Backend APIs with secure user authentication, password hashing, and role-based access (USER/ADMIN)
+	•	CRUD operations for a secondary entity (Tasks)
+	•	Minimal frontend built with React.js to demonstrate API functionality
 
-## Features
+Note: Admin registration is possible via the registration form. There is no separate admin panel implemented.
 
-- Create tasks
-- Update tasks
-- Delete tasks
-- Get tasks by user
-- User-task relationship
+⸻
 
-## Tech Stack
+Features
 
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Maven
+Backend
+	•	User registration & login with BCrypt password hashing
+	•	Role-based access (USER / ADMIN)
+	•	CRUD operations for Tasks
+	•	RESTful API design with proper status codes
+	•	Input validation & error handling
+	•	MySQL database for Users and Tasks
+	•	CORS configured for frontend integration
 
-## API Endpoints
+Frontend
+	•	React.js SPA with Register, Login, and Task Dashboard
+	•	Task dashboard shows task title, description, and status
+	•	Displays success/error messages returned from backend
+	•	Clean UI with cards and status badges
 
-GET /api/tasks
-GET /api/tasks/{id}
-GET /api/tasks/user/{userId}
-POST /api/tasks
-PUT /api/tasks/{id}
-DELETE /api/tasks/{id}
+  Tech Stack
 
-Backend structure --
+  Layer
+Technology
+Frontend
+React.js, React Router, Axios
+Backend
+Java, Spring Boot
+Database
+MySQL
+Security
+JWT Authentication, BCrypt
+Styling
+Inline CSS, Card & Badge UI
 
-taskmanager
-│
-├── src
-│   └── main
-│       ├── java/com/sumit/taskmanager
-│       └── resources
-│           application.properties
-│
-├── pom.xml
-├── README.md
-└── .gitignore
+
+Project Structure
+
+frontend/
+ ├─ src/
+ │   ├─ pages/         # Register, Login, TaskDashboard
+ │   ├─ services/      # authService.js, adminService.js
+backend/
+ ├─ src/main/java/com/sumit/taskmanager/
+ │   ├─ controller/    # AuthController, TaskController
+ │   ├─ model/         # User.java, Task.java
+ │   ├─ repository/    # JPA Repositories
+ │   ├─ service/       # Business logic
+
+ Run backend:
+
+ -cd project Folder
+ mvn spring-boot:run
+
+Frontend
+
+cd ../frontend
+npm install
+npm start
+ 
